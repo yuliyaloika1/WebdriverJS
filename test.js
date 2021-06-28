@@ -17,10 +17,8 @@ const chromedriver = require('chromedriver');
         const skillsArrow = driver.findElement(By.css('div.selected-params'));
         await skillsArrow.click();
         await sleep(100);
-        await driver.findElement(By.xpath('//span[contains(text(), \'Management\')]')).click();
+        await driver.findElement(By.xpath("//span[contains(text(), 'Management')]")).click();
         await skillsArrow.click();
-        const managementItem = driver.findElement(By.css('ul.selected-items li[data-value=\'Management\']'));
-        expect(managementItem).not.null();
     }
     finally {
         await driver.quit();
